@@ -1,9 +1,9 @@
-admin@techcorp.com - Admin
+admin@techcorp.com - admin@techcorp.com - Admin
 
 
-hr@techcorp.com - Hr
+hr@techcorp.com -  hr@techcorp.com - Hr
 
 
-dept@manager.com - Dept
+dept@manager.com - dept@manager.com - Dept
 
 JDK 17
