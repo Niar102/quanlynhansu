@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controller.AddEmployeeController"
+            prefWidth="700" prefHeight="700"
+            style="-fx-background-color: #ffffff;">
+
+    <!-- Nội dung chính -->
+    <center>
+        <GridPane hgap="15" vgap="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <columnConstraints>
+                <ColumnConstraints percentWidth="35"/>
+                <ColumnConstraints percentWidth="65"/>
+            </columnConstraints>
+
+            <Label text="Họ:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtFirstName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Tên:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtLastName" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Email:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtEmail" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Số điện thoại:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtPhone" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="CMND/CCCD:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtCitizenId" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Ngày sinh:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="dateBirth" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+            <Label text="Giới tính:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbGender" promptText="Chọn giới tính" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+            <Label text="Phòng ban:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbDepartment" promptText="Chọn phòng ban" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+            <Label text="Chức vụ:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbPosition" promptText="Chọn chức vụ" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+            <Label text="Ngày vào làm:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="dateHire" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+            <Label text="Trạng thái làm việc:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbStatus" promptText="Chọn trạng thái" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+            <Label text="Người liên hệ khẩn:" GridPane.rowIndex="12" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtEmergencyName" GridPane.rowIndex="12" GridPane.columnIndex="1"/>
+
+            <Label text="SĐT khẩn cấp:" GridPane.rowIndex="13" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtEmergencyPhone" GridPane.rowIndex="13" GridPane.columnIndex="1"/>
+
+            <Label text="Quan hệ:" GridPane.rowIndex="14" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtEmergencyRelation" GridPane.rowIndex="14" GridPane.columnIndex="1"/>
+        </GridPane>
+    </center>
+
+    <!-- Nút bấm -->
+    <bottom>
+        <HBox spacing="20" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Button fx:id="btnSave" text="Lưu"
+                    onAction="#handleSave"
+                    styleClass="button-save"/>
+            <Button fx:id="btnCancel" text="Hủy"
+                    onAction="#handleCancel"
+                    styleClass="button-cancel"/>
+        </HBox>
+    </bottom>
+</BorderPane>

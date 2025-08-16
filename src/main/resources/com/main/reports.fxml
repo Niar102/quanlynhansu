@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fitToWidth="true"
+            fitToHeight="true"
+            stylesheets="@sidebar.css">
+
+    <VBox styleClass="page-container" spacing="25">
+        
+        <!-- Welcome Header -->
+        <VBox spacing="10" style="-fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -fx-padding: 30; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 15, 0, 0, 3);">
+            <Label text="🎉 Chào mừng bạn đến với công ty!" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="Tài liệu hướng dẫn nhân viên mới" style="-fx-font-size: 18px; -fx-text-fill: rgba(255,255,255,0.9);"/>
+            <Label text="Hướng dẫn chi tiết để bạn làm quen với hệ thống quản lý nhân sự" style="-fx-font-size: 14px; -fx-text-fill: rgba(255,255,255,0.8); -fx-wrap-text: true;"/>
+        </VBox>
+
+        <!-- Navigation Cards -->
+        <GridPane hgap="20" vgap="20">
+            <!-- Row 1 -->
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 12, 0, 0, 2); -fx-pref-width: 280;">
+                <Label text="🔐" style="-fx-font-size: 32px;"/>
+                <Label text="Hướng dẫn đăng nhập" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label text="• Sử dụng tài khoản được cấp từ phòng IT" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Đổi mật khẩu sau lần đăng nhập đầu tiên" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Bảo mật thông tin đăng nhập" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Button text="Xem hướng dẫn" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+            </VBox>
+            
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 12, 0, 0, 2); -fx-pref-width: 280;">
+                <Label text="👤" style="-fx-font-size: 32px;"/>
+                <Label text="Quản lý thông tin cá nhân" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label text="• Cập nhật thông tin liên lạc" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Thêm ảnh đại diện" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Xem lịch sử làm việc" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Button text="Hướng dẫn cập nhật" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+            </VBox>
+            
+            <VBox GridPane.columnIndex="2" GridPane.rowIndex="0" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 12, 0, 0, 2); -fx-pref-width: 280;">
+                <Label text="⏰" style="-fx-font-size: 32px;"/>
+                <Label text="Chấm công và nghỉ phép" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label text="• Cách chấm công hàng ngày" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Đăng ký nghỉ phép" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Xem lịch làm việc" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Button text="Hướng dẫn chấm công" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+            </VBox>
+            
+            <!-- Row 2 -->
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="1" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 12, 0, 0, 2); -fx-pref-width: 280;">
+                <Label text="🏢" style="-fx-font-size: 32px;"/>
+                <Label text="Tìm hiểu tổ chức" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label text="• Sơ đồ tổ chức công ty" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Thông tin các phòng ban" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Danh bạ nội bộ" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Button text="Khám phá tổ chức" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+            </VBox>
+            
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="1" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 12, 0, 0, 2); -fx-pref-width: 280;">
+                <Label text="📋" style="-fx-font-size: 32px;"/>
+                <Label text="Quy trình làm việc" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label text="• Quy định nội bộ" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Quy trình phê duyệt" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Báo cáo công việc" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Button text="Xem quy trình" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+            </VBox>
+            
+            <VBox GridPane.columnIndex="2" GridPane.rowIndex="1" spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 12, 0, 0, 2); -fx-pref-width: 280;">
+                <Label text="🆘" style="-fx-font-size: 32px;"/>
+                <Label text="Hỗ trợ kỹ thuật" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label text="• Liên hệ IT: ext.100" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• Email: support@company.com" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Label text="• FAQ thường gặp" style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+                <Button text="Liên hệ hỗ trợ" style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 6; -fx-font-weight: bold;"/>
+            </VBox>
+        </GridPane>
+
+        <!-- Quick Start Guide -->
+        <VBox spacing="20" style="-fx-background-color: #f8f9fa; -fx-padding: 30; -fx-background-radius: 12; -fx-border-color: #e9ecef; -fx-border-width: 1; -fx-border-radius: 12;">
+            <Label text="🚀 Hướng dẫn bắt đầu nhanh" style="-fx-font-weight: bold; -fx-font-size: 22px; -fx-text-fill: #2c3e50;"/>
+            
+            <VBox spacing="15">
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <Label text="1️⃣" style="-fx-font-size: 20px;"/>
+                    <VBox spacing="5">
+                        <Label text="Đăng nhập lần đầu" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="Sử dụng tài khoản và mật khẩu tạm thời được cấp từ phòng nhân sự" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <Label text="2️⃣" style="-fx-font-size: 20px;"/>
+                    <VBox spacing="5">
+                        <Label text="Đổi mật khẩu" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="Vào mục Cài đặt → Bảo mật → Đổi mật khẩu. Chọn mật khẩu mạnh có ít nhất 8 ký tự" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <Label text="3️⃣" style="-fx-font-size: 20px;"/>
+                    <VBox spacing="5">
+                        <Label text="Cập nhật thông tin cá nhân" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="Truy cập mục Nhân viên → Hồ sơ của tôi để cập nhật thông tin liên lạc và ảnh đại diện" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <Label text="4️⃣" style="-fx-font-size: 20px;"/>
+                    <VBox spacing="5">
+                        <Label text="Khám phá các tính năng" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="Tham khảo các hướng dẫn chi tiết ở trên để làm quen với hệ thống" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+
+        <!-- Contact Information -->
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 12, 0, 0, 2);">
+            <Label text="📞 Thông tin liên hệ hỗ trợ" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-text-fill: #2c3e50;"/>
+            <HBox spacing="50">
+                <VBox spacing="10">
+                    <Label text="🖥️ Hỗ trợ kỹ thuật" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <Label text="📧 it-support@company.com" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
+                    <Label text="📱 Ext. 100" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+                <VBox spacing="10">
+                    <Label text="👥 Phòng nhân sự" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <Label text="📧 hr@company.com" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
+                    <Label text="📱 Ext. 200" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+                <VBox spacing="10">
+                    <Label text="⚠️ Khẩn cấp" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <Label text="📧 emergency@company.com" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
+                    <Label text="📱 0123-456-789" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+    </VBox>
+</ScrollPane> 

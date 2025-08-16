@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.AddContractController">
+    <top>
+        <VBox spacing="10.0">
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Thêm Hợp Đồng Mới" />
+            <Separator />
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true">
+            <content>
+                <GridPane hgap="15.0" vgap="15.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" minWidth="120.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="250.0" prefWidth="300.0" />
+                    </columnConstraints>
+
+                    <!-- Loại hợp đồng -->
+                    <Label text="Loại hợp đồng:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <ComboBox fx:id="contractTypeComboBox" maxWidth="1.7976931348623157E308" promptText="Chọn loại hợp đồng" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <!-- Mã hợp đồng -->
+                    <Label text="Mã hợp đồng:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="contractNumberField" promptText="Mã hợp đồng" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <!-- Nhân viên -->
+                    <Label text="Nhân viên:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="employeeComboBox" maxWidth="1.7976931348623157E308" promptText="Chọn nhân viên" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <!-- Ngày bắt đầu -->
+                    <Label text="Ngày bắt đầu:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <DatePicker fx:id="startDatePicker" maxWidth="1.7976931348623157E308" promptText="dd/MM/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <!-- Ngày kết thúc -->
+                    <Label text="Ngày kết thúc:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <DatePicker fx:id="endDatePicker" maxWidth="1.7976931348623157E308" promptText="dd/MM/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                    <!-- Mức lương -->
+                    <Label text="Mức lương:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <TextField fx:id="salaryField" promptText="Nhập mức lương (VND)" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                    <!-- Phụ cấp -->
+                    <Label text="Phụ cấp:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                    <TextField fx:id="allowancesField" promptText="Nhập phụ cấp (VND)" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                    <!--                    &lt;!&ndash; Ngày ký &ndash;&gt;-->
+                    <!--                    <Label text="Ngày ký:" GridPane.columnIndex="0" GridPane.rowIndex="7" />-->
+                    <!--                    <DatePicker fx:id="signedDatePicker" maxWidth="1.7976931348623157E308" promptText="dd/MM/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="7" />-->
+
+                    <!--                    &lt;!&ndash; Quyền lợi &ndash;&gt;-->
+                    <!--                    <Label text="Quyền lợi:" GridPane.columnIndex="0" GridPane.rowIndex="8" />-->
+                    <!--                    <TextArea fx:id="benefitsArea" prefRowCount="3" promptText="Nhập các quyền lợi..." wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="8" />-->
+
+                    <!-- Ghi chú -->
+                    <Label text="Ghi chú:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                    <TextArea fx:id="notesArea" prefRowCount="3" promptText="Nhập ghi chú..." wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+                </GridPane>
+            </content>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+            <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#handleCancel" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold;" text="Hủy">
+                <padding>
+                    <Insets bottom="8.0" left="20.0" right="20.0" top="8.0" />
+                </padding>
+            </Button>
+            <Button fx:id="saveButton" defaultButton="true" mnemonicParsing="false" onAction="#handleSave" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="Lưu">
+                <padding>
+                    <Insets bottom="8.0" left="20.0" right="20.0" top="8.0" />
+                </padding>
+            </Button>
+        </HBox>
+    </bottom>
+</BorderPane>

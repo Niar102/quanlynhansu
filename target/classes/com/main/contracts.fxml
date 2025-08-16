@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controller.ContractController"
+            fitToWidth="true"
+            fitToHeight="true"
+            stylesheets="@sidebar.css">
+
+    <VBox styleClass="page-container" spacing="20">
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Label text="Quản lý Hợp đồng" styleClass="page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="+ Tạo hợp đồng mới"
+                    fx:id="createContractButton"
+                    onAction="#handleCreateContract"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 5;"/>
+        </HBox>
+
+        <!-- Contract Stats -->
+        <HBox spacing="20">
+            <VBox alignment="CENTER" spacing="5" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2); -fx-pref-width: 180;">
+                <Label text="85" fx:id="activeContractsLabel" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                <Label text="Hợp đồng hiệu lực" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="5" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2); -fx-pref-width: 180;">
+                <Label text="12" fx:id="expiringContractsLabel" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #f39c12;"/>
+                <Label text="Sắp hết hạn" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="5" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2); -fx-pref-width: 180;">
+                <Label text="8" fx:id="expiredContractsLabel" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"/>
+                <Label text="Đã hết hạn" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+            </VBox>
+        </HBox>
+
+        <!-- Search and Filter -->
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <TextField promptText="Tìm kiếm hợp đồng..."
+                       fx:id="searchField"
+                       prefWidth="300"
+                       style="-fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #ddd; -fx-border-radius: 5;"/>
+            <ComboBox promptText="Loại hợp đồng"
+                      fx:id="contractTypeComboBox"
+                      prefWidth="150"
+                      style="-fx-padding: 10;"/>
+            <ComboBox promptText="Trạng thái"
+                      fx:id="statusComboBox"
+                      prefWidth="150"
+                      style="-fx-padding: 10;"/>
+            <DatePicker promptText="Từ ngày"
+                        fx:id="fromDatePicker"
+                        prefWidth="150"
+                        style="-fx-padding: 10;"/>
+        </HBox>
+
+        <!-- Contract Table -->
+        <TableView fx:id="contractTable" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 8;">
+            <columns>
+                <TableColumn fx:id="indexColumn" text="STT" prefWidth="50"/>
+                <TableColumn text="Mã HĐ" fx:id="contractCodeColumn" prefWidth="80"/>
+                <TableColumn text="Nhân viên" fx:id="employeeNameColumn" prefWidth="150"/>
+                <TableColumn text="Loại hợp đồng" fx:id="contractTypeColumn" prefWidth="130"/>
+                <TableColumn text="Ngày bắt đầu" fx:id="startDateColumn" prefWidth="100"/>
+                <TableColumn text="Ngày kết thúc" fx:id="endDateColumn" prefWidth="110"/>
+                <TableColumn text="Mức lương" fx:id="salaryColumn" prefWidth="100"/>
+                <TableColumn text="Trạng thái" fx:id="statusColumn" prefWidth="90"/>
+                <!-- THÊM MỚI: Cột người tạo hợp đồng -->
+                <TableColumn text="Người tạo" fx:id="createdByColumn" prefWidth="100"/>
+                <TableColumn text="Thao tác" fx:id="actionColumn" prefWidth="120"/>
+            </columns>
+        </TableView>
+
+        <!-- Contract Types Info -->
+        <VBox spacing="15" style="-fx-background-color: #f8f9fa; -fx-padding: 20; -fx-background-radius: 8;">
+            <Label text="Loại hợp đồng:" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <HBox spacing="30">
+                <VBox alignment="CENTER" spacing="5">
+                    <Label text="45" fx:id="longTermContractsLabel" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #3498db;"/>
+                    <Label text="Hợp đồng dài hạn" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="5">
+                    <Label text="25" fx:id="shortTermContractsLabel" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                    <Label text="Hợp đồng ngắn hạn" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="5">
+                    <Label text="15" fx:id="probationContractsLabel" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #f39c12;"/>
+                    <Label text="Hợp đồng thử việc" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+    </VBox>
+</ScrollPane>

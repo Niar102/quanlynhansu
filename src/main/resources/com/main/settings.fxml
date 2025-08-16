@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controller.SettingsController"
+            fitToWidth="true"
+            fitToHeight="true"
+            stylesheets="@sidebar.css">
+
+    <VBox styleClass="page-container" spacing="20">
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Label text="Quản lý Tài khoản" styleClass="page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnAddUser"
+                    onAction="#handleAddUser"
+                    text="+ Thêm tài khoản"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 5; -fx-cursor: hand;"/>
+        </HBox>
+
+        <!-- Search and Filter -->
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <VBox spacing="5">
+                <Label text="Tìm kiếm" />
+                <TextField fx:id="searchField" promptText="Tìm kiếm tài khoản..."
+                           prefWidth="300"
+                           style="-fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #ddd; -fx-border-radius: 5;" />
+            </VBox>
+
+
+            <VBox spacing="5">
+                <Label text="Vai trò" />
+                <ComboBox fx:id="roleFilter" promptText="Chọn vai trò"
+                          prefWidth="180" style="-fx-padding: 10;" />
+            </VBox>
+        </HBox>
+
+        <!-- Users Table -->
+        <TableView fx:id="userTable" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 8;">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+                <TableColumn fx:id="colUsername" text="Tài khoản" prefWidth="200"/>
+                <TableColumn fx:id="colRoleName" text="Vai trò" prefWidth="200"/>
+                <TableColumn fx:id="colRoleCode" text="Mã vai trò" prefWidth="150"/>
+                <TableColumn fx:id="actionColumn" text="Hành động" prefWidth="140"/>
+            </columns>
+        </TableView>
+
+        <!-- Overview -->
+        <VBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-padding: 20; -fx-background-radius: 8;">
+            <Label text="Tổng quan:" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <HBox spacing="30">
+                <VBox alignment="CENTER" spacing="5">
+                    <Label fx:id="lblTotal" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                    <Label text="Tổng tài khoản" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="5">
+                    <Label fx:id="lblAdmin" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3498db;"/>
+                    <Label text="Quản trị (Admin)" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="5">
+                    <Label fx:id="lblHR" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #e67e22;"/>
+                    <Label text="Nhân sự (HR)" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+    </VBox>
+</ScrollPane>

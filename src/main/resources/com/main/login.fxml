@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.controller.LoginController"
+           styleClass="root"
+           stylesheets="@login.css"
+           prefWidth="1000" prefHeight="800">
+
+    <!-- VBox đăng nhập chính -->
+    <VBox alignment="CENTER" spacing="15"
+          prefWidth="410" prefHeight="440"
+          maxWidth="410" maxHeight="440"
+          styleClass="vbox-login">
+
+        <ImageView fitHeight="48" fitWidth="48" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
+            </image>
+        </ImageView>
+
+        <Label text="Đăng nhập hệ thống"
+               style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+        <TextField fx:id="usernameField" promptText="Tên đăng nhập" />
+        <PasswordField fx:id="passwordField" promptText="Mật khẩu" />
+        <Button text="Đăng nhập" onAction="#handleLogin" />
+        <Label fx:id="errorLabel" id="errorLabel" />
+    </VBox>
+
+</StackPane>

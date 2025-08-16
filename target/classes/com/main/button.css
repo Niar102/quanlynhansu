@@ -1,0 +1,74 @@
+.button-save {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+}
+.button-save:hover {
+    -fx-background-color: #2ecc71; /* xanh nhạt hơn khi hover */
+}
+
+.button-cancel {
+    -fx-background-color: #c0392b;
+    -fx-text-fill: white;
+}
+.button-cancel:hover {
+    -fx-background-color: #e74c3c; /* đỏ sáng hơn khi hover */
+}
+
+#btnLogout {
+    -fx-background-color: #d9534f;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+#btnLogout:hover {
+    -fx-background-color: #c9302c;
+}
+#btnLogout:pressed {
+    -fx-background-color: #a8231f;
+}
+
+/* ===== Button base ===== */
+.button {
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+/* ===== Nút + Thêm nhân viên ===== */
+.button.btn-add {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-padding: 10 20;
+}
+.button.btn-add:hover {
+    -fx-background-color: #2980b9;
+}
+.button.btn-add:pressed {
+    -fx-background-color: #2573a6;
+}
+
+/* ===== Nút Sửa trong bảng ===== */
+.button.btn-edit {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-padding: 4 10;
+}
+.button.btn-edit:hover {
+    -fx-background-color: #2f89d6;
+}
+.button.btn-edit:pressed {
+    -fx-background-color: #2874bf;
+}
+
+/* ===== Nút Xoá trong bảng ===== */
+.button.btn-delete {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-padding: 4 10;
+}
+.button.btn-delete:hover {
+    -fx-background-color: #cf4436;
+}
+.button.btn-delete:pressed {
+    -fx-background-color: #b93a2e;
+}
+

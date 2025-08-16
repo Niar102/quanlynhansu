@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controller.DashboardController"
+            fitToWidth="true"
+            fitToHeight="true"
+            stylesheets="@sidebar.css">
+
+    <VBox styleClass="dashboard-container" spacing="25">
+        
+        <!-- Header Section -->
+            <VBox spacing="10">
+            <Label text="Dashboard" styleClass="dashboard-title"/>
+            <Label text="Tổng quan hệ thống quản lý nhân sự" styleClass="dashboard-subtitle"/>
+        </VBox>
+
+        <!-- Stats Cards Section -->
+            <HBox spacing="20" styleClass="stats-section">
+            <VBox styleClass="stats-card">
+                <Label fx:id="totalEmployeesLabel" text="0" styleClass="stats-number"/>
+                <Label text="Tổng nhân viên" styleClass="stats-label"/>
+            </VBox>
+            
+            <VBox styleClass="stats-card">
+                <Label fx:id="totalDepartmentsLabel" text="0" styleClass="stats-number"/>
+                <Label text="Phòng ban" styleClass="stats-label"/>
+            </VBox>
+            
+            <VBox styleClass="stats-card">
+                <Label fx:id="totalContractsLabel" text="0" styleClass="stats-number"/>
+                <Label text="Hợp đồng" styleClass="stats-label"/>
+            </VBox>
+            
+            <VBox styleClass="stats-card">
+                <Label fx:id="totalReportsLabel" text="0" styleClass="stats-number"/>
+                <Label text="Tài liệu" styleClass="stats-label"/>
+            </VBox>
+        </HBox>
+
+        <!-- Main Function Cards -->
+        <VBox spacing="15">
+            <Label text="Chức năng chính" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <FlowPane hgap="20" vgap="20" styleClass="dashboard-cards">
+                
+                <!-- Nhân viên Card -->
+                <VBox styleClass="dashboard-card" onMouseClicked="#openEmployees">
+                    <Label text="👥" styleClass="card-icon"/>
+                    <Label text="Quản lý Nhân viên" styleClass="card-title"/>
+                    <Label text="Thêm, sửa, xóa thông tin nhân viên" styleClass="card-description"/>
+                </VBox>
+
+                <!-- Tổ chức Card -->
+                <VBox styleClass="dashboard-card" onMouseClicked="#openOrganization">
+                    <Label text="🏢" styleClass="card-icon"/>
+                    <Label text="Cơ cấu Tổ chức" styleClass="card-title"/>
+                    <Label text="Quản lý phòng ban và cấu trúc" styleClass="card-description"/>
+                </VBox>
+
+                <!-- Hợp đồng Card -->
+                <VBox styleClass="dashboard-card" onMouseClicked="#openContracts">
+                    <Label text="📄" styleClass="card-icon"/>
+                    <Label text="Hợp đồng" styleClass="card-title"/>
+                    <Label text="Quản lý hợp đồng lao động" styleClass="card-description"/>
+                </VBox>
+
+                <!-- Tài liệu Card -->
+                <VBox styleClass="dashboard-card" onMouseClicked="#openDocuments">
+                    <Label text="📄" styleClass="card-icon"/>
+                    <Label text="Tài liệu" styleClass="card-title"/>
+                    <Label text="Quản lý và xem tài liệu công ty" styleClass="card-description"/>
+                </VBox>
+
+                <!-- Quản lý Card -->
+                <VBox styleClass="dashboard-card" onMouseClicked="#openSettings">
+                    <Label text="⚙️" styleClass="card-icon"/>
+                    <Label text="Quản lý" styleClass="card-title"/>
+                    <Label text="Cấu hình hệ thống" styleClass="card-description"/>
+                </VBox>
+
+                <!-- -->
+                
+            </FlowPane>
+        </VBox>
+
+        <!-- -->
+
+    </VBox>
+</ScrollPane> 

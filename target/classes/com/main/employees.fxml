@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.controller.EmployeeController"
+            fitToWidth="true"
+            fitToHeight="true"
+            stylesheets="@sidebar.css">
+
+    <VBox styleClass="page-container" spacing="20">
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Label text="Quản lý Nhân viên" styleClass="page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnAddEmployee"
+                    onAction="#handleAddEmployee"
+                    text="+ Thêm nhân viên"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 5; -fx-cursor: hand;"
+                    onMouseEntered="#onHoverAdd"
+                    onMouseExited="#onExitAdd"/>
+        </HBox>
+
+        <!-- Search and Filter -->
+        <HBox spacing="20" alignment="CENTER_LEFT">
+
+            <!-- Tìm kiếm -->
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Tìm kiếm" />
+                <TextField fx:id="searchField" promptText="Tìm kiếm nhân viên..."
+                           prefWidth="300"
+                           style="-fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #ddd; -fx-border-radius: 5;" />
+            </VBox>
+
+            <!-- Phòng ban -->
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Phòng ban" />
+                <ComboBox fx:id="departmentFilter" promptText="Chọn phòng ban"
+                          prefWidth="180"
+                          style="-fx-padding: 8;" />
+            </VBox>
+
+            <!-- Chức vụ -->
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Chức vụ" />
+                <ComboBox fx:id="positionFilter" promptText="Chọn chức vụ"
+                          prefWidth="180"
+                          style="-fx-padding: 8;" />
+            </VBox>
+
+        </HBox>
+
+
+        <!-- Employee Table -->
+        <TableView fx:id="employeeTable" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 8;">
+            <columns>
+                <TableColumn fx:id="colId" text="Mã NV" prefWidth="80"/>
+                <TableColumn fx:id="colFullName" text="Họ và tên" prefWidth="200"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
+                <TableColumn fx:id="colPhone" text="SĐT" prefWidth="120"/>
+                <TableColumn fx:id="colGender" text="Giới tính" prefWidth="100"/>
+                <TableColumn fx:id="colDateOfBirth" text="Ngày sinh" prefWidth="120"/>
+                <TableColumn fx:id="colDepartment" text="Phòng ban" prefWidth="150"/>
+                <TableColumn fx:id="colPosition" text="Chức vụ" prefWidth="150"/>
+                <TableColumn fx:id="colHireDate" text="Ngày vào làm" prefWidth="120"/>
+                <TableColumn fx:id="colStatus" text="Trạng thái" prefWidth="100"/>
+                <TableColumn fx:id="actionColumn" text="Hành động" prefWidth="100"/>
+            </columns>
+        </TableView>
+
+        <!-- Overview -->
+        <VBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-padding: 20; -fx-background-radius: 8;">
+            <Label text="Tổng quan:" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <HBox spacing="30">
+                <VBox alignment="CENTER" spacing="5">
+                    <Label fx:id="lblTotal" text="150" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                    <Label text="Tổng nhân viên" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="5">
+                    <Label fx:id="lblWorking" text="145" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3498db;"/>
+                    <Label text="Đang làm việc" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="5">
+                    <Label fx:id="lblInactive" text="5" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"/>
+                    <Label text="Đã nghỉ việc" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+    </VBox>
+</ScrollPane>
